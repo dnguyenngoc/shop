@@ -56,3 +56,73 @@
 2021-05-18 01:53:25,298 - INFO - Waiting for application shutdown.
 2021-05-18 01:53:25,299 - INFO - Application shutdown complete.
 2021-05-18 01:53:25,299 - INFO - Finished server process [2266]
+2021-05-18 02:39:43,525 - INFO - Started server process [2744]
+2021-05-18 02:39:43,525 - INFO - Waiting for application startup.
+2021-05-18 02:39:43,526 - INFO - Application startup complete.
+2021-05-18 02:39:43,526 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:41:30,607 - INFO - Shutting down
+2021-05-18 02:41:30,708 - INFO - Waiting for application shutdown.
+2021-05-18 02:41:30,708 - INFO - Application shutdown complete.
+2021-05-18 02:41:30,708 - INFO - Finished server process [2744]
+2021-05-18 02:44:02,088 - INFO - Started server process [2770]
+2021-05-18 02:44:02,089 - INFO - Waiting for application startup.
+2021-05-18 02:44:02,089 - INFO - Application startup complete.
+2021-05-18 02:44:02,089 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:44:08,223 - INFO - Shutting down
+2021-05-18 02:44:08,324 - INFO - Waiting for application shutdown.
+2021-05-18 02:44:08,324 - INFO - Application shutdown complete.
+2021-05-18 02:44:08,325 - INFO - Finished server process [2770]
+2021-05-18 02:44:36,992 - INFO - Started server process [2781]
+2021-05-18 02:44:36,992 - INFO - Waiting for application startup.
+2021-05-18 02:44:36,993 - INFO - Application startup complete.
+2021-05-18 02:44:36,993 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:45:01,116 - INFO - Shutting down
+2021-05-18 02:45:01,217 - INFO - Waiting for application shutdown.
+2021-05-18 02:45:01,217 - INFO - Application shutdown complete.
+2021-05-18 02:45:01,217 - INFO - Finished server process [2781]
+2021-05-18 02:45:02,457 - INFO - Started server process [2794]
+2021-05-18 02:45:02,457 - INFO - Waiting for application startup.
+2021-05-18 02:45:02,458 - INFO - Application startup complete.
+2021-05-18 02:45:02,458 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:45:04,165 - INFO - Shutting down
+2021-05-18 02:45:04,265 - INFO - Waiting for application shutdown.
+2021-05-18 02:45:04,266 - INFO - Application shutdown complete.
+2021-05-18 02:45:04,266 - INFO - Finished server process [2794]
+2021-05-18 02:45:05,865 - INFO - Started server process [2803]
+2021-05-18 02:45:05,866 - INFO - Waiting for application startup.
+2021-05-18 02:45:05,866 - INFO - Application startup complete.
+2021-05-18 02:45:05,867 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:52:08,129 - INFO - Shutting down
+2021-05-18 02:52:08,232 - INFO - Finished server process [2803]
+2021-05-18 02:52:10,521 - INFO - Started server process [2842]
+2021-05-18 02:52:10,522 - INFO - Waiting for application startup.
+2021-05-18 02:52:10,522 - INFO - Application startup complete.
+2021-05-18 02:52:10,523 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:52:55,664 - INFO - Shutting down
+2021-05-18 02:52:55,764 - INFO - Waiting for application shutdown.
+2021-05-18 02:52:55,765 - INFO - Application shutdown complete.
+2021-05-18 02:52:55,765 - INFO - Finished server process [2842]
+2021-05-18 02:52:58,243 - INFO - Started server process [2860]
+2021-05-18 02:52:58,244 - INFO - Waiting for application startup.
+2021-05-18 02:52:58,244 - INFO - Application startup complete.
+2021-05-18 02:52:58,245 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:54:15,293 - INFO - Shutting down
+2021-05-18 02:54:15,393 - INFO - Waiting for application shutdown.
+2021-05-18 02:54:15,394 - INFO - Application shutdown complete.
+2021-05-18 02:54:15,394 - INFO - Finished server process [2860]
+2021-05-18 02:54:18,060 - INFO - Started server process [2881]
+2021-05-18 02:54:18,060 - INFO - Waiting for application startup.
+2021-05-18 02:54:18,060 - INFO - Application startup complete.
+2021-05-18 02:54:18,061 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:58:22,711 - INFO - Shutting down
+2021-05-18 02:58:22,812 - INFO - Waiting for application shutdown.
+2021-05-18 02:58:22,812 - INFO - Application shutdown complete.
+2021-05-18 02:58:22,812 - INFO - Finished server process [2881]
+2021-05-18 02:58:25,223 - INFO - Started server process [2920]
+2021-05-18 02:58:25,224 - INFO - Waiting for application startup.
+2021-05-18 02:58:25,224 - INFO - Application startup complete.
+2021-05-18 02:58:25,224 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-18 02:58:40,186 - INFO - Shutting down
+2021-05-18 02:58:40,287 - INFO - Waiting for application shutdown.
+2021-05-18 02:58:40,288 - INFO - Application shutdown complete.
+2021-05-18 02:58:40,288 - INFO - Finished server process [2920]

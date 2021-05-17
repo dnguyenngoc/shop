@@ -12,6 +12,7 @@ db_session = scoped_session(
 )
 Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+
 Base = declarative_base(metadata=MetaData(schema=config.DATABASE_SCHEMA))
 
 

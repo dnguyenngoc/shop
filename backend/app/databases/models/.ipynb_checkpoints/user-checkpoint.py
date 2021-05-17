@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime, Boolean, DECIMAL
 from databases.db import Base
-
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = "user"

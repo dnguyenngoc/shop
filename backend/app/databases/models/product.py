@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime, Boolean, DECIMAL
 from databases.db import Base
-
+from sqlalchemy.orm import relationship
 
 class Product(Base):
     __tablename__ = "product"
@@ -9,7 +9,7 @@ class Product(Base):
     name = Column(String, nullable=False)
     description =  Column(String, nullable=True, default=None)
     import_price = Column(DECIMAL, nullable=False)
-    number_of_goods_in_stock = (Integer, nullable=False, defaut=0)
+    number_of_goods_in_stock = Column(Integer, nullable=False, default=0)
     sale_price = Column(DECIMAL, nullable=True, default=None)
     sale_point = Column(DECIMAL, nullable=True, default=None)
     hot_point = Column(DECIMAL, nullable=True, default=None)

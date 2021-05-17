@@ -6,7 +6,7 @@ class Industry(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(Integer, nullable=False, index=True)
     description = Column(String, nullable=True, default=None)
-    hot_point = Collum(DECIMAL, nullable=True, default=None)
+    hot_point = Column(DECIMAL, nullable=True, default=None)
     create_date = Column(DateTime, nullable=False)
     update_date = Column(DateTime, nullable=True, default=None)
 
