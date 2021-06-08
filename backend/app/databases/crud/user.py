@@ -1,31 +1,23 @@
+from databases.models.user import User
+from databases.entities.user import UserCreate
 from sqlalchemy.orm import Session
-from typing import List, Optional
-from datetime import datetime
-from fastapi.encoders import jsonable_encoder
-from databases.models import User
+from sqlalchemy.orm import joinedload
 
 
-def create(db_session: Session, create) -> User:
-    data = User(**create.dict())
-    db_session.add(data)
-    db_session.commit()
-    db_session.refresh(data)
-    return data
+def create(*, db: Session, form_data: UserCreate) -> User:
+    load_model = User(**form_data.dict())
+    db.add(load_model)
+    db.commit()
+    db.refresh(load_model)
+    return load_model
 
+def update(*, db: Session, form_data: dict) -> User:
+    return db.query(User).filter(User.id == form_data.id).update(form_data, synchronize_session = False)
 
-def read(db_session: Session, id: int) -> User:
-    return db_session.query(User).filter(User.id == id).first()
-
-
-def update(db_session: Session, id: int, update) -> User:
-    update = db_session.query(User).filter(User.id == id).update(update, synchronize_session='evaluate')
-    db_session.commit()
-    return update
-
-
-def delete(db_session: Session, id: int) -> User:
-    query = db_session.query(User).filter(User.id == id).first()
-    db_session.delete(query)
-    db_session.commit()
+def get(*, db: Session, id: int) -> User:
+    query = db.query(User).filter(User.id == id).first()
     return query
 
+def delete(*, db: Session, id: int) -> User:
+    query = db.query(User).filter(User.id == id).delete()
+    return query

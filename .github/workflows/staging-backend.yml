@@ -1,0 +1,84 @@
+name:  PRODUCTION_PIPELINE
+on:
+  push:
+    branches:
+    - production  
+env:
+  # Variable name
+  PROJECT_NAME: shop
+  FRONTEND: frontend
+  BACKEND: backend
+
+  # dockerhub container
+  DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+
+jobs:
+
+  build-backend:
+    name: Building backend production
+    runs-on: ubuntu-latest
+    steps:  
+
+    # [Step-1] check config git
+    - uses: actions/checkout@v2
+
+    # [Step-2] login dockerhub container
+    - name: Login to DockerHub Registry
+      run: |
+        echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+    
+    # [Step-3] buid and tag image from Dockerfile
+    - name: Build and tag the image
+      run: |
+        docker build -t $BACKEND -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$BACKEND ./backend/
+    
+    # [Step-4] Push image to docker hub
+    - name: Push image to DockerHub
+      run: |
+        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BACKEND
+  
+  build-frontend:
+    name: Building frontend production
+    runs-on: ubuntu-latest
+    steps:  
+
+    # [Step-1] check config git
+    - uses: actions/checkout@v2
+
+    # [Step-2] login dockerhub container
+    - name: Login to DockerHub Registry
+      run: |
+        echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+    
+    # [Step-3] buid and tag image from Dockerfile
+    - name: Build and tag the image
+      run: |
+        docker build -t $FRONTEND -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$FRONTEND ./frontend/
+    
+    # [Step-4] Push image to docker hub
+    - name: Push image to DockerHub
+      run: |
+        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$FRONTEND
+
+  deploy-only-one-vm:
+    name: Deploy web service on only one VM
+    needs: [build-backend, build-frontend]
+    runs-on: ubuntu-latest
+    steps:
+      # [Step-1] check config git
+      - uses: actions/checkout@v2
+
+      # [Step-2] SSH to vm
+      - name: Login to DockerHub Registry
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USERNAME }}
+          password: ${{ secrets.VM_PASSWORD }}
+          # key: ${{ secrets.VM_KEY }}
+          port: ${{ secrets.VM_PORT }}
+          source: "docker-compose-prod-one-for-all.yaml"
+          target: "/opt/web-management/"
+      
+     

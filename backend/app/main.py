@@ -7,13 +7,14 @@ from starlette.requests import Request
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from fastapi.middleware.cors import CORSMiddleware
+from api.routers import v1
 
 
-# Define app
+# ++++++++++++++++++++++++++++++++++++++++++++ DEFINE APP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 app = FastAPI(title=config.PROJECT_NAME, openapi_url="/api/openapi.json", docs_url="/api/docs", redoc_url="/api/redoc")
 
 
-# Handle log
+# ++++++++++++++++++++++++++++++++++++++++++++ HANDLE LOG FILE +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 handler = TimedRotatingFileHandler('logs/golang.log', when="midnight", interval=1, encoding='utf8')
 handler.suffix = "%Y-%m-%d"
@@ -23,21 +24,20 @@ logger.setLevel(logging.INFO)
 logger.addHandler(handler)
 
 
-from api.routers import v1, v2
-# ++++++++++++++++++++++++++++ Router config +++++++++++++++++++++++++++++++++
+# ++++++++++++++++++++++++++++++++++++++++++++ ROUTER CONFIG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 app.include_router(v1.router, prefix="/api/v1")
-app.include_router(v2.router, prefix="/api/v2")
-
-# ++++++++++++++++++++++++++++ Router config +++++++++++++++++++++++++++++++++
 
 
-# Cors middleware
+# ++++++++++++++++++++++++++++++++++++++++++++ CORS MIDDLEWARE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 origins = [
     "http://{host}".format(host=config.HOST_NAME),
-    "http://{host}:{port}".format(host=config.BE_HOST, port = config.BE_PORT),
-    "http://{host}:{port}".format(host=config.FE_HOST, port = config.FE_PORT),
-]
+    "http://{host}:{port}".format(host=config.HOST_NAME, port = config.BE_PORT),
+    "http://{host}:{port}".format(host=config.HOST_NAME, port = config.FE_PORT),
+    "http://10.1.133.3:8081",
+    "http://10.1.133.3",
 
+
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -46,7 +46,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# DB config
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ DB CONFIG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @app.middleware("http")
 async def db_session_middleware(request: Request, call_next):
     request.state.db = Session()
@@ -55,5 +56,6 @@ async def db_session_middleware(request: Request, call_next):
     return response
 
 
+# ++++++++++++++++++++++++++++++++++++++++++++++ RUN SERVICE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0',port=config.BE_PORT,debug=True)

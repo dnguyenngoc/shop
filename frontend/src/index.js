@@ -1,28 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './index.css';
-import Home from './screens/home.js'
-import Header from './components/header/header.js'
 
-const routes = [
-  {
-    path: '/',
-    component: Home,
-  }
-];
+// core styles
+import "./styles/scss/volt.scss";
+
+// vendor styles
+import "@fortawesome/fontawesome-free/css/all.css";
+import "react-datetime/css/react-datetime.css";
+
+
+import Home from './screens/home.js'
+import ScrollToTop from "./components/scoll/scoll_top";
+import { HashRouter } from "react-router-dom";
+
 
 
 ReactDOM.render(
-  <Router forceRefresh={true}>
-    <Header/>
-     <Switch>
-      {routes.map((route) => (
-        <Route exact path={route.path} render={() => <route.component />} key={route.path} />
-      ))}
-    </Switch>
-  </Router>,
-  document.getElementById('root')
+  <HashRouter>
+    <ScrollToTop />
+    <Home />
+  </HashRouter>,
+  document.getElementById("root")
 );
+
 

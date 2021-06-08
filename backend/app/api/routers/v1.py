@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-from api.resources import test_v1
-
+from api.resources.v1 import account
 
 router = APIRouter()
 
-router.include_router(test_v1.router, prefix="/test", tags=["test v1"])
+
+router.include_router(account.router, prefix="/account",  tags=["V1-Account"])
