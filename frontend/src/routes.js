@@ -5,7 +5,8 @@ export const Routes = {
     Signup: { path: "/sign-up" },
     Overview: { path: "/"},
     Test: { path: '/test'},
-    Pnl: {path: "/operation/pnl"}
+    Pnl: {path: "/operation/pnl"},
+    Chess: {path: "/game/chess"},
 
 
     // Transactions: { path: "/transactions" },

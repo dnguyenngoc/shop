@@ -26,6 +26,13 @@
 .bgs-white{
     background-color: white
 }
+.bgs-black{
+    background-color: black
+}
+.bgs-red{
+    background-color: red
+}
+
 
 .section-image {
    @include background-image(no-repeat, cover); 

@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 
-const API_V1 = "http://10.1.133.3:8081/api/v1/"
-
+export const BASE_URL = process.env.REACT_APP_API_V1;
 
 export default function isUserLogin(){
     const freshToken = localStorage.getItem('freshToken');
@@ -33,7 +32,7 @@ export default function isUserLogin(){
         console.log("refresh token")
         axios({
             method: "post",
-            url: API_V1 + "account/login/refresh-token",
+            url: BASE_URL + "account/login/refresh-token",
             data: bodyFreshToken,
             headers: { "Content-Type": "multipart/form-data" },
         }).then(function (response) {

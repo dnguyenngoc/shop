@@ -33,10 +33,6 @@ origins = [
     "http://{host}".format(host=config.HOST_NAME),
     "http://{host}:{port}".format(host=config.HOST_NAME, port = config.BE_PORT),
     "http://{host}:{port}".format(host=config.HOST_NAME, port = config.FE_PORT),
-    "http://10.1.133.3:8081",
-    "http://10.1.133.3",
-
-
 ]
 app.add_middleware(
     CORSMiddleware,

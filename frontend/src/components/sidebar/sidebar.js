@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar-react';
 import {  useLocation } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faChartPie, faFileAlt, faSignOutAlt, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {  faChartPie, faTable, faFileAlt, faSignOutAlt, faTimes, faGamepad} from "@fortawesome/free-solid-svg-icons";
 import { Nav, Badge, Image, Button, Dropdown, Navbar } from '@themesberg/react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -78,9 +78,10 @@ export default (props = {}) => {
             </div>
             <Nav className="flex-column pt-3 pt-md-0">
               <Logo />
+              <Dropdown.Divider className="my-3 border-indigo" />
               <NavItem title="PNL Upload" link={Routes.Pnl.path} icon={faFileAlt} />
-              <NavItem title="Demo Analytic" link={Routes.Overview.path} icon={faChartPie} />
-              
+              <NavItem title="Analytic" link={Routes.Overview.path} icon={faChartPie} />
+              <NavItem title="Game" link={Routes.Chess.path} icon={faGamepad} />
 
               {/* <CollapsableNavItem eventKey="features/" title="Features" icon={faTable}>
                 <NavItem title="Sign In" link={Routes.Login.path} />

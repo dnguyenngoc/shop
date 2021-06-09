@@ -23,7 +23,6 @@ class Login extends Component {
       this.handleChangeRemember = this.handleChangeRemember.bind(this)
     }
     componentDidMount(){
-      console.log(this.state.isLogin)
       if (this.check === true){
         this.setState({isLogin: true})
         window.location.href = "/operation/pnl"

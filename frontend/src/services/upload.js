@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_V1 = "http://10.1.133.3:8081/api/v1/"
+export const BASE_URL = process.env.REACT_APP_API_V1;
 
 const uploadNas = (file, password, sheetName, month, year, onUploadProgress) => {
   let formData = new FormData();
@@ -14,7 +14,7 @@ const uploadNas = (file, password, sheetName, month, year, onUploadProgress) => 
   const token = localStorage.getItem("accessToken")
 
   return axios.create({
-    baseURL: API_V1,
+    baseURL: BASE_URL,
     }).post("operation/pnl", formData, {
     headers: {
       "Content-Type": "multipart/form-data",
