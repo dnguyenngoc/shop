@@ -1,0 +1,36 @@
+name:  PRODUCTION_PIPELINE
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Initial docker'  
+env:
+  # Variable name
+  PROJECT_NAME: shop
+  FRONTEND: frontend
+  BACKEND: backend
+
+  # dockerhub container
+  DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+
+jobs:
+
+  initial-docker:
+    name: Install docker
+    runs-on: ubuntu-latest
+    steps:  
+
+    # [Step-1] check config git
+    - uses: actions/checkout@v2
+
+    # [Step-2] login dockerhub container
+    - name: Login to DockerHub Registry
+      run: |
+        echo "Log level: ${{ github.event.inputs.logLevel }}"
+        echo "Tags: ${{ github.event.inputs.tags }}" 
+   

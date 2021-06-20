@@ -5,3 +5,6 @@ WHERE "web-management"."user".email = %(email_1)s AND "web-management"."user".pa
  LIMIT %(param_1)s
 2021-06-09 09:52:28,660 - INFO - [cached since 6268s ago] {'email_1': 'duynguyenngoc@hotmail.com', 'password_1': '1q2w3e4r', 'param_1': 1}
 2021-06-09 09:52:28,758 - INFO - ROLLBACK
+2021-06-09 09:55:40,220 - INFO - Shutting down
+2021-06-09 09:55:40,321 - INFO - Waiting for background tasks to complete. (CTRL+C to force quit)
+2021-06-09 09:55:40,422 - INFO - Finished server process [5815]
