@@ -1,4 +1,4 @@
-name:  PRODUCTION_PIPELINE
+name:  PRODUCTION INITIAL DOCKER PIPELINE
 on:
   workflow_dispatch:
     inputs:
