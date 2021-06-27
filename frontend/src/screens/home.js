@@ -13,7 +13,7 @@ import Footer from "../components/footer/footer";
 // page
 import Overview from "./oveview"
 import Pnl from "./pnl"
-import Chess from "./chess"
+import Game from "./game/index"
 import isUserLogin from '../services/token'
 
 
@@ -76,7 +76,7 @@ export default () => (
           <>
           <RouteWithSidebar exact path={Routes.Overview.path} component={Overview} />
           <RouteWithSidebar exact path={Routes.Pnl.path} component={Pnl} />
-          <RouteWithSidebar exact path={Routes.Chess.path} component={Chess} />
+          <RouteWithSidebar exact path={Routes.Chess.path} component={Game} />
           </>
         }
     </Switch>

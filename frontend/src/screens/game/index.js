@@ -6,13 +6,14 @@ import { Col, Row, Button, Dropdown } from '@themesberg/react-bootstrap';
 import React, { useState } from 'react';
 import { Toast } from '@themesberg/react-bootstrap';
 import { faBootstrap } from '@fortawesome/free-brands-svg-icons';
-import Progress from "../components/progress/progress";
+import Progress from "../../components/progress/progress";
 import { Form } from '@themesberg/react-bootstrap';
 import { Alert } from '@themesberg/react-bootstrap';
-import  UploadService from '../services/upload' 
+import  UploadService from '../../services/upload' 
 import Moment from 'moment';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
+import Chess  from '../../components/game/chess/index'
 
 export default () => {
   const [showDefault, setShowDefault] = useState(true);
@@ -40,33 +41,11 @@ return (
       </Dropdown>
       <div className='d-flex justify-content-between flex-md-nowrap align-items-left py-4 height-1000'>
           <div className='width-per-80'>
-              <React.Fragment>
-              <Alert variant="primary">
-    A simple primary alert — check it out!
-  </Alert>
-  <Alert variant="secondary">
-    A simple secondary alert — check it out!
-  </Alert>
-  <Alert variant="success">
-    A simple success alert — check it out!
-  </Alert>
-  <Alert variant="danger">
-    A simple danger alert — check it out!
-  </Alert>
-  <Alert variant="warning">
-    A simple warning alert — check it out!
-  </Alert>
-  <Alert variant="info">
-    A simple info alert — check it out!
-  </Alert>
-  <Alert variant="light">
-    A simple light alert — check it out!
-  </Alert>
-  <Alert variant="dark">
-    A simple dark alert — check it out!
-  </Alert>
-              </React.Fragment></div>
-          <div className='bgs-red width-per-20'>
+            <React.Fragment>
+                <Chess/>
+            </React.Fragment>
+          </div>
+          <div className='width-per-20'>
               <div>rank</div>
               <div>chat</div>
             </div>

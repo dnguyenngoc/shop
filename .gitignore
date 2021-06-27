@@ -2,7 +2,8 @@
 .vscode
 *.ipynb*
 __pycache__
-
+*golang.log*
+*auto_migration.py
 
 # dependencies
 node_modules
