@@ -8,7 +8,7 @@ from sqlalchemy import pool
 from alembic import context
 
 # DB models
-from databases.models import role, user, document, document_type
+from databases.models import user
 from databases.db import Base
 from settings import config as environments
 

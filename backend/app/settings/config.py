@@ -3,7 +3,7 @@ import configparser
 
 
 cfg = configparser.ConfigParser()
-cfg.read('./environment.ini')
+cfg.read('./env-staging.ini')
 
 
 #=========================================================================
@@ -50,14 +50,3 @@ SALT = bytes(AUTHENTICATE['salt'], "utf-8").decode('unicode_escape')
 ACCESS_TOKEN_EXPIRE_MINUTES = AUTHENTICATE.getint('access_expire')
 FRESH_TOKEN_EXPIRE_MINUTES = AUTHENTICATE.getint('fresh_expire')
 SECRET_KEY = AUTHENTICATE['secret_key'] 
-
-
-#=========================================================================
-#                          NAS INFORMATION 
-#=========================================================================
-NAS = cfg['nas']
-NAS_HOST = NAS['host']
-NAS_USER = NAS['user']
-NAS_PASSWORD = NAS['pass']
-NAS_CERT_PATH = NAS['cert_path']
-NAS_ROOT_PATH = NAS['root_path']
