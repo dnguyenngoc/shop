@@ -13,6 +13,7 @@ import ReactHero from "../../assets/img/technologies/react-hero-logo.svg";
 import Logo from "../logo/logo"
 import ProfilePicture from "../../assets/img/team/profile-picture-3.jpg";
 import { Routes } from "../../routes";
+import { faHackerNews } from "@fortawesome/free-brands-svg-icons";
 
 
 
@@ -79,9 +80,9 @@ export default (props = {}) => {
             <Nav className="flex-column pt-3 pt-md-0">
               <Logo />
               <Dropdown.Divider className="my-3 border-indigo" />
-              <NavItem title="PNL Upload" link={Routes.Pnl.path} icon={faFileAlt} />
               <NavItem title="Analytic" link={Routes.Overview.path} icon={faChartPie} />
-              <NavItem title="Game" link={Routes.Chess.path} icon={faGamepad} />
+              <NavItem title="Games" link={Routes.Games.path} icon={faGamepad} />
+
 
               {/* <CollapsableNavItem eventKey="features/" title="Features" icon={faTable}>
                 <NavItem title="Sign In" link={Routes.Login.path} />

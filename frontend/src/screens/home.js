@@ -12,9 +12,11 @@ import Footer from "../components/footer/footer";
 
 // page
 import Overview from "./oveview"
-import Pnl from "./pnl"
-import Game from "./game/index"
+import Games from "./games"
 import isUserLogin from '../services/token'
+import Chess from "./sub_game/chess"
+import AboutUs from "./about"
+
 
 
 const RouteWithSidebar = ({ component: Component, ...rest }) => {
@@ -71,13 +73,16 @@ const RouteWithLoader = ({ component: Component, ...rest }) => {
 
 export default () => (
     <Switch>
+      <RouteWithLoader exact path={Routes.AboutUs.path} component={AboutUs} />
       <RouteWithLoader exact path={Routes.Login.path} component={Login} />
        { isUserLogin() === false ? <Redirect to={Routes.Login.path}/>: 
           <>
           <RouteWithSidebar exact path={Routes.Overview.path} component={Overview} />
-          <RouteWithSidebar exact path={Routes.Pnl.path} component={Pnl} />
-          <RouteWithSidebar exact path={Routes.Chess.path} component={Game} />
+          <RouteWithSidebar exact path={Routes.Games.path} component={Games} />
+          <RouteWithLoader exact path={Routes.Chess.path} component={Chess} />
+
           </>
         }
+        
     </Switch>
   );

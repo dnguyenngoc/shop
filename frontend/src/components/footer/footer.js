@@ -63,12 +63,12 @@ export default (props) => {
           <Col xs={12} lg={6}>
             <ul className="list-inline list-group-flush list-group-borderless text-center text-xl-right mb-0">
               <li className="list-inline-item px-0 px-sm-2">
-                <Card.Link href="https://digi-texx.vn/about-us/" target="_blank">
+                <Card.Link href="/#/about-us" >
                   About Us
               </Card.Link>
               </li>
               <li className="list-inline-item px-0 px-sm-2">
-                <Card.Link href="https://digi-texx.vn/contact-us/" target="_blank">
+                <Card.Link href="https://digi-texx.vn/contact-us/">
                   Contact
               </Card.Link>
               </li> 

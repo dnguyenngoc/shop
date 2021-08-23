@@ -4,9 +4,11 @@ export const Routes = {
     Login: { path: "/login" },
     Signup: { path: "/sign-up" },
     Overview: { path: "/"},
-    Test: { path: '/test'},
-    Pnl: {path: "/operation/pnl"},
-    Chess: {path: "/game/chess"},
+    Games: { path: '/games'},
+    Chess: { path: '/games/chess'},
+    AboutUs: { path: '/about-us'},
+
+
 
 
     // Transactions: { path: "/transactions" },
