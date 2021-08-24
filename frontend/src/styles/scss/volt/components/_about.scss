@@ -1,0 +1,101 @@
+/**
+ * = about us
+ */
+
+ .about-us{
+    color: #000000;
+    background-color: #f4f4f4;
+    display: flex;
+    margin-left: 15px;
+    padding-top: 30px;
+    height: 100%;
+    .profile{
+        max-width: 500px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: inherit;
+        z-index: 0;
+        padding: 0 1em 0 0.2em;
+        .profile-heading{
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: "Roboto", Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #000000;
+        }
+        .profile-content{
+            color: #999999;
+            font-size: 14px;
+            margin: 0 0 24px;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        .profile-menu{
+            list-style-type: none;
+            padding-left: 20px;
+            margin-bottom: 40px;
+            li{
+                a{
+                    color: #787b81;
+                }
+                a:hover{
+                    color: #495c83;
+                    font-weight: bold;
+                }
+                .default{
+                    color: #495c83;
+                    font-weight: bold;
+                }
+            }
+        }
+        .profile-social{
+            margin-top: 20px;
+            a{
+                margin: 0 10px 10px 0;
+                color: #fff;
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                line-height: 40px;
+                font-size: 15px;
+                text-align: center;
+                vertical-align: bottom;
+                border: solid 1px #999999;
+                color: #999999;
+                -webkit-transition: all 0.2s ease-out;
+                -moz-transition: all 0.2s ease-out;
+                transition: all 0.2s ease-out;
+                .profile-social-email{
+
+                }
+                .profile-social-linkin{
+
+                }
+                .profile-social-github{
+
+                }
+                .profile-social-youtube{
+
+                }
+            }
+            a:hover{
+                border: solid 1px #5688b8;
+                background-color: rgb(106, 186, 189);
+            }
+        }
+        .profile-copy{
+            color: #999999;
+        }
+    }
+    .content{
+        border: solid 1px #5688b8;
+        width: 100%;
+        margin-left: 120px;
+    }
+}
