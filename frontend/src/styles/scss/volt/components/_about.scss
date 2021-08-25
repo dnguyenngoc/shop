@@ -94,8 +94,10 @@
         }
     }
     .content{
-        border: solid 1px #5688b8;
+        display: flex;
+        // border: solid 1px #5688b8;
         width: 100%;
         margin-left: 120px;
+       
     }
 }

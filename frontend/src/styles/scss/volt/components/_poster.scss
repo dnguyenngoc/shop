@@ -1,0 +1,44 @@
+.poster{
+    background: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 0 5px #ccc;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+    min-height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 20px;
+    .poster-go-content{
+
+    }
+    .poster-go-content:hover{
+        
+    }
+    
+    .poster-content{
+        padding: 15px 20px 15px;
+        .poster-content-title{
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+        .poster-content-description{
+            color: #999999;
+            p{
+                font-size: 14px;
+            }
+            strong{
+                color: #2065a1;
+            }
+            .demo{
+                font-size: 14px;
+                font-weight: bold;
+                color:  #2065a1;
+            }
+        }
+    }
+}
+

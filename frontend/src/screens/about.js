@@ -6,7 +6,13 @@ import InIcon from "../assets/img/contact-me/in.png"
 import YoutubeIcon from "../assets/img/contact-me/youtube.png"
 import { auto } from "@popperjs/core";
 import React, { useState } from 'react';
+import Poster from "../components/poster/poster"
+import ChessLogo from "../assets/img/project/chess.jpg"
+import Test2 from "../assets/img/project/test2.jpg"
+import Test3 from "../assets/img/project/test3.JPG"
 
+
+import { Col, Row, Button, Dropdown, ButtonGroup } from '@themesberg/react-bootstrap';
 
 
 export default () => {
@@ -54,10 +60,45 @@ export default () => {
         </div>
       </div>
       <div className="content">
-          here
+      <Row className="justify-content-md-center">
+        <Col xs={12}  sm={6} xl={3} className="mb-4">
+         <Poster 
+            url = {"/#/games/chess"} 
+            pictureUrl = {ChessLogo} 
+            title = {"React-Chess"} 
+            playUrl = {"/#/games/chess/demo"}
+            description="born from the love of the game. This is going to be under constant development as I learn to optimize the AI, get better at the game and just build beautiful UI. If you have the love for chess or programming in general, I'd love to chat!"/>
+        </Col>
+        <Col xs={12} sm={6} xl={3} className="mb-4">
+         <Poster 
+            url = {"/#/games/chess"} 
+            pictureUrl = {Test2} 
+            title = {"Cargo"} 
+            playUrl = {"/#/games/chess/demo"}
+            description="A React Native carpool application used to connect users and enable them to create carpools by location and time"/>
+        </Col>
+        <Col xs={12} sm={6} xl={3}  className="mb-4">
+         <Poster 
+            url = {"/#/games/chess"} 
+            pictureUrl = {Test3} 
+            title = {"React-Chess"} 
+            playUrl = {"/#/games/chess/demo"}
+            description="is a service used to shorten URLs. Built on the idea of bit.ly, this basic application is light weight, can easily be deployed on a shorter domain name to achieve better usage."/>
+        </Col>
+        <Col xs={12} sm={6} xl={3}  className="mb-4">
+         <Poster 
+            url = {"/#/games/chess"} 
+            pictureUrl = {ChessLogo} 
+            title = {"React-Chess"} 
+            playUrl = {"/#/games/chess/demo"}
+            description="is a service used to shorten URLs. Built on the idea of bit.ly, this basic application is light weight, can easily be deployed on a shorter domain name to achieve better usage."/>
+        </Col>
+      </Row>
+      
+     
+
       </div>
     </div>
-
     </>
   );
 };
